@@ -19,4 +19,9 @@ public class PatientServiceImpl implements PatientService {
     public List<Patient> findAll() {
         return patientRepository.findAll();
     }
+
+    @Override
+    public Patient getPatientById(Long id) {
+        return patientRepository.getById(id);
+    }
 }

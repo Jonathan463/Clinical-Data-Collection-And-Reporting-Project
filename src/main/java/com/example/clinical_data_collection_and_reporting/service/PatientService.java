@@ -7,4 +7,5 @@ import java.util.List;
 @Service
 public interface PatientService {
     List<Patient> findAll();
+    Patient getPatientById(Long id);
 }
