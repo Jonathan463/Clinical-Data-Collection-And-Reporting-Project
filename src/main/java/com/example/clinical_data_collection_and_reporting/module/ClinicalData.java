@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -16,15 +17,14 @@ public class ClinicalData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Long patient_id;
-    private String component_name;
-    private String component_value;
+    private String componentName;
+    private String componentValue;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false)
-    private Date measured_date_time;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="patient_id", referencedColumnName = "Id")
+    private Timestamp measuredDateTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="patient_id", nullable = false, referencedColumnName = "Id")
     private Patient patient;
 
 }
