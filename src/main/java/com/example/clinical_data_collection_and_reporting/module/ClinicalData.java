@@ -26,7 +26,7 @@ public class ClinicalData {
 
     private Timestamp measuredDateTime;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="patient_id", nullable = false, referencedColumnName = "Id")
     private Patient patient;
 
