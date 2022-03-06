@@ -1,5 +1,6 @@
 package com.example.clinical_data_collection_and_reporting.module;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,11 +13,13 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Table(name="clinicaldata")
+@JsonIgnoreProperties({"patient"})
 public class ClinicalData {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long patient_id;
+//    private Long patient_id;
     private String componentName;
     private String componentValue;
 

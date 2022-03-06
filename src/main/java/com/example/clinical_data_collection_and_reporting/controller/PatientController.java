@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class PatientController {
 
-    private final PatientService patientService;
+    private PatientService patientService;
 
     @Autowired
     public PatientController(PatientService patientService) {
@@ -25,5 +25,9 @@ public class PatientController {
     @GetMapping("/patient/{id}")
     public Patient getPatientById(@PathVariable("id") Long id){
         return patientService.getPatientById(id);
+    }
+    @RequestMapping(value="/save_patient", method = RequestMethod.POST)
+    public Patient savePatient(@RequestBody Patient patient){
+        return patientService.savePatient(patient);
     }
 }
