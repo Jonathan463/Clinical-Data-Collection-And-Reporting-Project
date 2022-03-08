@@ -1,5 +1,6 @@
 package com.example.clinical_data_collection_and_reporting.module;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 @Table(name="clinicaldata")
-@JsonIgnoreProperties({"patient"})
+//@JsonIgnoreProperties({"patient"})
 public class ClinicalData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +29,9 @@ public class ClinicalData {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="patient_id", nullable = false, referencedColumnName = "Id")
+    @JsonIgnore
     private Patient patient;
+
+
 
 }
