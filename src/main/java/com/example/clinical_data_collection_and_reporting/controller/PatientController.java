@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin
 public class PatientController {
 
     private PatientService patientService;
@@ -29,5 +30,10 @@ public class PatientController {
     @RequestMapping(value="/save_patient", method = RequestMethod.POST)
     public Patient savePatient(@RequestBody Patient patient){
         return patientService.savePatient(patient);
+    }
+
+    @GetMapping("/patient/analyze/{id}")
+    public Patient analyzeData(@PathVariable("id") Long id){
+        return patientService.analyzeData(id);
     }
 }
