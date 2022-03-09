@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClinicalDataRequest {
-    private String componentName;
+    private String ComponentName;
     private String componentValue;
     private Long patientId;
 }
