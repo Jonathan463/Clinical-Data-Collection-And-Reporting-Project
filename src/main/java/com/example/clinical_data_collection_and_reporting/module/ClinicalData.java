@@ -21,7 +21,7 @@ public class ClinicalData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 //    private Long patient_id;
-    private String componentName;
+    private String ComponentName;
     private String componentValue;
 
 
