@@ -22,7 +22,7 @@ public class ClinicalData {
     private Long id;
 //    private Long patient_id;
     private String componentName;
-    private String componentValue;
+    private String ComponentValue;
 
 
     private Timestamp measuredDateTime;
