@@ -2,6 +2,7 @@ package com.example.clinical_data_collection_and_reporting.module;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class ClinicalData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 //    private Long patient_id;
+    @NotNull
     private String componentName;
     private String componentValue;
 
