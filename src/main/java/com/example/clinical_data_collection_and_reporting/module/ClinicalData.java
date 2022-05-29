@@ -24,6 +24,7 @@ public class ClinicalData {
 //    private Long patient_id;
     @NotNull
     private String componentName;
+    @NotNull
     private String componentValue;
 
 
