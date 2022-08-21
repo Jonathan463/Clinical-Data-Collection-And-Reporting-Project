@@ -1,9 +1,7 @@
 package com.example.clinical_data_collection_and_reporting.module;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GeneratorType;
 
@@ -13,7 +11,9 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+//@ToString
 @Table(name="patient")
 public class Patient {
     @Id
@@ -27,4 +27,13 @@ public class Patient {
     private int age;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "patient")
     private List<ClinicalData> clinicalData;
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
